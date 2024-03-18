@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
+import Counter from './Counter';
 
 function App() {
+  let[previous,current]=useState('')  
+  let Add =()=>{
+    current('Rahul');
+  }
+  let Rem =()=>{
+    current('');
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+      <h1 style={{color:'red'}}>Hello {previous}</h1>
+      <button onClick={Add} style={{margin:'15px'}}>Add Name</button>
+      <button onClick={Rem}>Remove Name</button>
+
+      <Counter/>
     </div>
   );
 }
